@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from werkzeug.utils import secure_filename
@@ -47,6 +47,7 @@ class Contacts(db.Model):
 
 @app.route("/")
 def home():
+    flash("Hello there","success")
     posts = Posts.query.filter_by().all()
     last = math.ceil(len(posts)/int(params['no_of_posts']))
     #[0:params['no_of_posts']]
@@ -179,11 +180,12 @@ def contact():
         entry = Contacts(name=name, phone_num=phone, mes=message, date=datetime.now(), email=email)
         db.session.add(entry)
         db.session.commit()
-        mail.send_message('New message from ' + name,
-                          sender=email,
-                          recipients=[params['gmail-user']],
-                          body=message + "\n" + phone
-                          )
+        #mail.send_message('New message from ' + name,
+        #                  sender=email,
+         #                 recipients=[params['gmail-user']],
+         #                 body=message + "\n" + phone
+         #                 )
+        flash("we will get back soon","success")
     return render_template('contact.html', params=params)
 
 
