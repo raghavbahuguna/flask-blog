@@ -1,0 +1,20 @@
+{
+  "params":
+  {
+    "local_server":"True",
+    "local_uri":"mysql://root:@localhost/alfacoder",
+    "prod_uri":"mysql://root:@localhost/alfacoder",
+    "fb_url":"facebook.com/raghav.bahuguna",
+    "blog_name":"Delta Coder",
+    "tagline":"A blog Liked by Delta Coders",
+    "gmail-user":"raghavbahuguna@gmail.com",
+    "gmail-password":"raghavbahugunaimpeyan",
+    "about-text":"about us",
+    "no_of_posts": 2,
+    "login_image":"about-bg.jpg",
+    "admin_user":"harry",
+    "admin_password": "subscribenow",
+    "upload_location":" C:\\Users\\user\\PycharmProjects\\flask-test\\static\\"
+
+  }
+}
